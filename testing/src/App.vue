@@ -4,11 +4,15 @@
     <!-- <h2>Consumiendo api rando user</h2> -->
     <!-- <Imagenes/> -->
     <hr><br>
-    <router-link to="/" class="btn btn-primary">Home</router-link>
-    <router-link to="/imagenes" class="btn btn-info">Images</router-link>
-    <router-link to="/yo" class="btn btn-warning">About me</router-link>
+    <router-link to="/" class="btn" exact>Home</router-link>
+    <router-link to="/imagenes" class="btn">Images</router-link>
+    <router-link to="/yo" class="btn">About me</router-link>
     <br><br><hr>
+    
+  <transition>
     <router-view></router-view>
+  </transition>
+
   </div>
 </template>
 
@@ -24,13 +28,16 @@ export default {
 </script>
 
 <style>
+body{
+  background: #f3f3f3;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  /* margin-top: 60px; */
 }
 .btn{
   padding: 8px;
@@ -44,4 +51,18 @@ export default {
 .btn:hover{
   background: teal;
 }
+
+
+.v-enter-active, .v-leave-active {
+  transition: opacity .5s;
+}
+.v-enter, .v-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
+/*active links*/
+.router-link-active{
+  background: green;
+}
+
 </style>

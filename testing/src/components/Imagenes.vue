@@ -1,15 +1,19 @@
 <template>
-  <div class="hello">
-    
-  <div class="row" >
+
+<div>
+<center>
+<template v-if="info">
+
+  <div class="row">
     <div class="card" v-for="datos in info">
         <img :src="datos.picture.large" alt="">
     </div>
   </div>
 
-  <!-- <pre>{{ info }}</pre> -->
-
-  </div>
+</template>
+<span v-else><h2>Cargando..</h2></span>
+</center>
+</div>
 </template>
 
 <script>
@@ -27,7 +31,7 @@ export default {
   },
   data(){
     return {
-      info: []
+      info: null
     }
   }
 }
